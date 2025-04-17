@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg.tpvente.CommandeFournisseurController">
+   <children>
+      <AnchorPane prefHeight="671.0" prefWidth="895.0">
+         <children>
+            <BorderPane layoutX="1.0" prefHeight="671.0" prefWidth="1202.0">
+               <left>
+                  <AnchorPane prefHeight="671.0" prefWidth="247.0" style="-fx-background-color: #03b17d;" styleClass="bg-color" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" BorderPane.alignment="CENTER">
+                     <children>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="98.0" layoutY="60.0" size="5em" />
+                        <Line endX="100.0" layoutX="122.0" layoutY="132.0" startX="-100.0" stroke="WHITE" />
+                        <Label layoutX="25.0" layoutY="132.0" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Fonctionnalités" textFill="WHITE" />
+                        <Button fx:id="reception_btn" layoutX="22.0" layoutY="325.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="btn-1" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Réception Commande" />
+                        <Button fx:id="commande_btn" layoutX="22.0" layoutY="371.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="btn-1" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Commande" />
+                        <Button layoutX="22.0" layoutY="572.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleBackToLogin" prefHeight="40.0" prefWidth="200.0" styleClass="btn-1" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Retour" />
+                        <Label layoutX="99.0" layoutY="305.0" text="Approvisionnement" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane fx:id="mainPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox fx:id="commande_form" prefHeight="671.0" prefWidth="954.0" spacing="10">
+                           <padding>
+                              <Insets bottom="10" left="10" right="10" top="10" />
+                           </padding>
+                           <children>
+                              <HBox spacing="10">
+                                 <children>
+                                    <Label text="Fournisseur :" />
+                                    <ComboBox fx:id="fournisseurComboBox" promptText="Sélectionner un fournisseur" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="10">
+                                 <children>
+                                    <Label text="Médicament :" />
+                                    <ComboBox fx:id="medicamentComboBox" promptText="Sélectionner un médicament" />
+                                    <Label text="Quantité :" />
+                                    <TextField fx:id="quantityField" promptText="Entrer la quantité" />
+                                    <Label text="Prix Unitaire :" />
+                                    <TextField fx:id="priceField" promptText="Prix unitaire" />
+                                    <Button onAction="#passerCommande" text="Passer Commande" />
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="commandeTable">
+                                 <columns>
+                                    <TableColumn fx:id="numCommandeColumn" prefWidth="88.00000131130219" text="N° Commande" />
+                                    <TableColumn fx:id="fournisseurColumn" prefWidth="187.19994354248047" text="Fournisseur" />
+                                    <TableColumn fx:id="medicamentColumn" prefWidth="185.60003662109375" text="Médicament" />
+                                    <TableColumn fx:id="quantiteColumn" prefWidth="88.00003051757812" text="Quantité" />
+                                    <TableColumn fx:id="prixColumn" prefWidth="100.800048828125" text="Prix Unitaire" />
+                                    <TableColumn fx:id="montantTotalColumn" prefWidth="171.99993896484375" text="Montant Total" />
+                                    <TableColumn fx:id="statutColumn" prefWidth="108.800048828125" text="Statut" />
+                                 </columns>
+                              </TableView>
+                              <HBox prefHeight="26.0" prefWidth="100.0" spacing="10">
+                                 <children>
+                                    <Button fx:id="annulerCommandeButton" onAction="#annulerCommande" text="Annuler Commande" />
+                                 </children>
+                              </HBox>
+                              <Label fx:id="statusLabel" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

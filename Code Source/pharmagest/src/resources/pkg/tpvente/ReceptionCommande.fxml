@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="receptionCommande_form" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg.tpvente.ReceptionCommandeController">
+    <children>
+        <VBox prefHeight="550.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label style="-fx-font-weight: bold;" text="Commandes à réceptionner" />
+
+            <!-- Table des commandes à réceptionner -->
+            <TableView fx:id="receptionTable">
+                <columns>
+                    <TableColumn fx:id="numCommandeColumn" prefWidth="90.39998948574066" text="N° Commande" />
+                    <TableColumn fx:id="medicamentColumn" prefWidth="161.60002899169922" text="Médicament" />
+                    <TableColumn fx:id="quantiteCommandeeColumn" prefWidth="132.7999267578125" text="Quantité Commandée" />
+                    <TableColumn fx:id="quantiteRecueColumn" prefWidth="116.80001831054688" text="Quantité Reçue" />
+                    <TableColumn fx:id="prixColumn" prefWidth="111.99996948242188" text="Prix Final" />
+                    <TableColumn fx:id="statutColumn" prefWidth="135.20001220703125" text="Statut" />
+                </columns>
+            </TableView>
+
+            <HBox spacing="10">
+                <Label text="Quantité reçue :" />
+                <TextField fx:id="quantiteRecueField" promptText="Quantité reçue" />
+                <Label text="Prix final :" />
+                <TextField fx:id="prixFinalField" promptText="Prix final" />
+                <Button onAction="#confirmerReception" text="Confirmer Réception" />
+                <Button onAction="#signalerProbleme" text="Signaler un Problème" />
+            </HBox>
+         <Label fx:id="statusLabel" />
+        </VBox>
+    </children>
+</AnchorPane>

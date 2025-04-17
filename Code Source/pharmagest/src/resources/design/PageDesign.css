@@ -1,0 +1,25 @@
+.white-bg{
+    -fx-background-color: #fff;
+}
+.radius{
+    -fx-background-radius: 6px;
+}
+.text-field{
+    -fx-border-color: #000;
+    -fx-border-width: .3 px;
+    -fx-font-family: Tahoma;
+}
+.text-field1:focused{
+    -fx-border-color: linear-gradient(to bottom right, #13ae80, #03b17d);
+    -fx-border-width: .1 px;
+}
+.btn1{
+    -fx-background-color: linear-gradient(to bottom right, #13ae80, #03b17d);
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size: 14px;
+    -fx-font-family: Arial;
+}
+.btn1:hover{
+    -fx-background-color: linear-gradient(to bottom right, #13ae80, #03b17d);
+}

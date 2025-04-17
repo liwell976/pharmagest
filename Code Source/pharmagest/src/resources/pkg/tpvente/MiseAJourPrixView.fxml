@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pkg.tpvente.MiseAJourPrixController">
+
+    <center>
+        <VBox prefHeight="550.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Mise à Jour des Prix des Médicaments" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <!-- Table des médicaments -->
+            <TableView fx:id="medicamentTable" prefHeight="300">
+                <columns>
+                    <TableColumn fx:id="dciColumn" text="DCI" prefWidth="250"/>
+                    <TableColumn fx:id="prixVenteColumn" text="Prix Vente (€)" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+            <!-- Sélection du fournisseur -->
+            <HBox spacing="10">
+                <Label text="Fournisseur :"/>
+                <ComboBox fx:id="fournisseurComboBox" promptText="Sélectionner un fournisseur"/>
+            </HBox>
+
+            <!-- Table des prix fournisseurs -->
+            <TableView fx:id="prixFournisseurTable" prefHeight="200">
+                <columns>
+                    <TableColumn fx:id="fournisseurColumn" text="Fournisseur" prefWidth="200"/>
+                    <TableColumn fx:id="prixAchatColumn" text="Prix Achat (€)" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+            <!-- Mise à jour du prix -->
+            <HBox spacing="10">
+                <Label text="Nouveau Prix de Vente :"/>
+                <TextField fx:id="nouveauPrixField" promptText="Entrer le prix"/>
+                <Button text="Mettre à Jour" onAction="#mettreAJourPrix"/>
+            </HBox>
+
+            <Label fx:id="statusLabel" text="" style="-fx-text-fill: red;"/>
+        </VBox>
+    </center>
+</BorderPane>

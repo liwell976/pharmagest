@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="pkg.tpvente.VenteOrdonnanceController">
+
+    <center>
+        <VBox prefHeight="600" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10"/>
+            </padding>
+
+            <Label text="Vente de Médicaments sous Ordonnance" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+            <!-- Saisie des médicaments -->
+            <HBox spacing="10">
+                <Label text="Médicament:"/>
+                <ComboBox fx:id="medicamentComboBox" promptText="Sélectionner un médicament"/>
+                <Label text="Quantité:"/>
+                <TextField fx:id="quantiteField" promptText="Entrer la quantité"/>
+                <Button text="Ajouter" onAction="#ajouterMedicament"/>
+            </HBox>
+
+            <!-- Tableau des médicaments ajoutés -->
+            <TableView fx:id="tableVente" prefHeight="250">
+                <columns>
+                    <TableColumn fx:id="medicamentColumn" text="Médicament" prefWidth="200"/>
+                    <TableColumn fx:id="quantiteColumn" text="Quantité" prefWidth="100"/>
+                    <TableColumn fx:id="prixColumn" text="Prix (€)" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <!-- Informations sur l'ordonnance -->
+            <VBox spacing="10">
+                <Label text="Informations de l'ordonnance"/>
+                <HBox spacing="10">
+                    <Label text="Nom du médecin:"/>
+                    <TextField fx:id="nomMedecinField" promptText="Nom du médecin"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Nom du patient:"/>
+                    <TextField fx:id="nomPatientField" promptText="Nom du patient"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Date de prescription:"/>
+                    <DatePicker fx:id="datePrescriptionPicker"/>
+                </HBox>
+            </VBox>
+
+            <!-- Actions -->
+            <HBox spacing="10">
+                <Button text="Finaliser Vente" onAction="#finaliserVente"/>
+                <Button text="Annuler" onAction="#annulerVente"/>
+            </HBox>
+
+            <Label fx:id="statusLabel" text="" style="-fx-text-fill: red;"/>
+        </VBox>
+    </center>
+</BorderPane>

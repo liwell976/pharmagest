@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg.tpvente.BilanFinancierController">
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="671.0" prefWidth="247.0" style="-fx-background-color: #03b17d;" styleClass="bg-color" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css">
+               <children>
+                  <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="98.0" layoutY="60.0" size="5em" />
+                  <Line endX="100.0" layoutX="122.0" layoutY="132.0" startX="-100.0" stroke="WHITE" />
+                  <Label layoutX="25.0" layoutY="132.0" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Fonctionnalités" textFill="WHITE" />
+                  <Button fx:id="maintenance_btn" layoutX="24.0" layoutY="274.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="btn-1" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Maintenance" />
+                  <Button fx:id="bilan_btn" layoutX="24.0" layoutY="388.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="btn-1" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Bilan Financier" />
+                  <Button layoutX="22.0" layoutY="572.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleBackToLogin" prefHeight="40.0" prefWidth="200.0" styleClass="btn-1" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Retour" />
+                  <Label layoutX="174.0" layoutY="368.0" text="Finance" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane fx:id="mainPane" prefHeight="671.0" prefWidth="931.0">
+               <children>
+                  <AnchorPane fx:id="mainPane" layoutX="1.0" prefHeight="671.0" prefWidth="930.0" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css">
+                     <styleClass>
+                        <String fx:value="shadow" />
+                        <String fx:value="white-bg" />
+                     </styleClass>
+                     <children>
+                        <Button fx:id="maintenanceMedicament_btn" layoutX="270.0" layoutY="220.0" mnemonicParsing="false" onAction="#openStockView" prefHeight="54.0" prefWidth="118.0" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Médicament">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="MAJ_btn" layoutX="542.0" layoutY="220.0" mnemonicParsing="false" onAction="#openMiseAJourPrixView" prefHeight="54.0" prefWidth="118.0" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="MAJ Liste de Prix">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="utilisateur_btn" layoutX="542.0" layoutY="397.0" mnemonicParsing="false" onAction="#openUserView" prefHeight="54.0" prefWidth="118.0" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Utilisateur">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="fournisseur_btn" layoutX="270.0" layoutY="397.0" mnemonicParsing="false" onAction="#openFournisseurView" prefHeight="54.0" prefWidth="118.0" stylesheets="@../../../../../../../../Users/abdou/IdeaProjects/Pharmagestsystem/src/main/java/com/example/design/MainFormDesign.css" text="Fournisseur">
+                           <styleClass>
+                              <String fx:value="shadow" />
+                              <String fx:value="white-bg" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                        </Button>
+                        <Label layoutX="14.0" layoutY="14.0" text="Maintenance">
+                           <font>
+                              <Font name="Arial Nova" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="bilanFinancier_form" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <VBox prefHeight="671.0" prefWidth="930.0" spacing="10">
+                     <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                     </padding>
+                     <children>
+                        <HBox prefHeight="60.0" spacing="10">
+                           <padding>
+                              <Insets bottom="10" left="10" right="10" top="10" />
+                           </padding>
+                           <children>
+                              <Label text="Période :" />
+                              <DatePicker fx:id="dateDebutPicker" promptText="Date début" />
+                              <DatePicker fx:id="dateFinPicker" promptText="Date fin" />
+                              <Button onAction="#filtrerBilan" text="Filtrer" />
+                           </children>
+                        </HBox>
+                        <Label style="-fx-font-weight: bold;" text="Ventes" />
+                        <TableView fx:id="ventesTable" prefHeight="200" prefWidth="500.0">
+                           <columns>
+                              <TableColumn fx:id="numVenteColumn" prefWidth="228.80005776882172" text="N° Vente" />
+                              <TableColumn fx:id="dateVenteColumn" prefWidth="167.99989318847656" text="Date" />
+                              <TableColumn fx:id="montantVenteColumn" prefWidth="511.9999694824219" text="Montant (€)" />
+                           </columns>
+                        </TableView>
+                        <Label style="-fx-font-weight: bold;" text="Achats Fournisseurs" />
+                        <TableView fx:id="achatsTable" prefHeight="200" prefWidth="500.0">
+                           <columns>
+                              <TableColumn fx:id="numCommandeColumn" prefWidth="231.20002114772797" text="N° Commande" />
+                              <TableColumn fx:id="dateCommandeColumn" prefWidth="170.3999786376953" text="Date" />
+                              <TableColumn fx:id="montantCommandeColumn" prefWidth="505.5999450683594" text="Montant (€)" />
+                           </columns>
+                        </TableView>
+                        <HBox prefHeight="60.0" spacing="10">
+                           <padding>
+                              <Insets bottom="10" left="10" right="10" top="10" />
+                           </padding>
+                           <children>
+                              <Label text="Total Ventes :" />
+                              <Label fx:id="totalVentesLabel" text="0.00 €" />
+                              <Label text="Total Achats :" />
+                              <Label fx:id="totalAchatsLabel" text="0.00 €" />
+                              <Label text="Bénéfice Net :" />
+                              <Label fx:id="beneficeNetLabel" style="-fx-font-weight: bold; -fx-text-fill: green;" text="0.00 €" />
+                              <Button onAction="#exporterPDF" text="Exporter PDF" />
+                              <Button onAction="#exporterExcel" text="Exporter Excel" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+
+</BorderPane>

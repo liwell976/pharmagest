@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg.tpvente.StockController">
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+
+            <Label text="Rechercher :" />
+            <TextField fx:id="searchField" promptText="Nom ou DCI du médicament" />
+            <Button onAction="#searchStock" text="Rechercher" />
+         <Label fx:id="statusLabel" />
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="stockTable" prefHeight="400.0" prefWidth="850.0">
+            <columns>
+                <TableColumn fx:id="dciColumn" prefWidth="196.80002439022064" text="DCI" />
+                <TableColumn fx:id="familleColumn" prefWidth="194.4000244140625" text="Famille" />
+                <TableColumn fx:id="prixVenteColumn" prefWidth="134.39993286132812" text="Prix Vente" />
+                <TableColumn fx:id="stockColumn" prefWidth="108.800048828125" text="Stock" />
+                <TableColumn fx:id="seuilMinColumn" prefWidth="104.79998779296875" text="Seuil Min" />
+                <TableColumn fx:id="stockMaxColumn" prefWidth="114.4000244140625" text="Stock Max" />
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox prefHeight="60.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="DCI:" />
+            <TextField fx:id="dciField" editable="false" prefHeight="26.0" prefWidth="111.0" />
+            <Label text="Stock:" />
+            <TextField fx:id="stockField" prefHeight="26.0" prefWidth="111.0" />
+            <Button onAction="#updateStock" text="Mettre à jour" />
+            <Button onAction="#updateStock" text="Mettre à jour stock" />
+            <Button onAction="#alertStock" text="Signaler une rupture" />
+            <Button onAction="#refreshStock" text="Rafraîchir" />
+        </HBox>
+    </bottom>
+</BorderPane>

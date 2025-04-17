@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/20.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkg.tpvente.FournisseurController">
+
+    <top>
+        <HBox prefHeight="60.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Rechercher :" />
+            <TextField fx:id="searchField" promptText="Nom ou Contact" />
+            <Button onAction="#searchFournisseur" text="Rechercher" />
+            <Button onAction="#loadFournisseurs" text="Réinitialiser" />
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="fournisseurTable" prefHeight="400.0">
+            <columns>
+                <TableColumn fx:id="idColumn" prefWidth="50" text="ID" />
+                <TableColumn fx:id="nomColumn" prefWidth="150" text="Nom" />
+                <TableColumn fx:id="contactColumn" prefWidth="150" text="Contact" />
+                <TableColumn fx:id="adresseColumn" prefWidth="200" text="Adresse" />
+                <TableColumn fx:id="telephoneColumn" prefWidth="150" text="Téléphone" />
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox prefHeight="141.0" prefWidth="702.0" spacing="10">
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <HBox spacing="10">
+                <Label text="Nom :" />
+                <TextField fx:id="nomField" />
+                <Label text="Contact :" />
+                <TextField fx:id="contactField" />
+            </HBox>
+            <HBox spacing="10">
+                <Label text="Adresse :" />
+                <TextField fx:id="adresseField" />
+                <Label text="Téléphone :" />
+                <TextField fx:id="telephoneField" />
+            </HBox>
+            <HBox spacing="10">
+                <Button onAction="#ajouterFournisseur" text="Ajouter" />
+                <Button onAction="#modifierFournisseur" text="Modifier" />
+                <Button onAction="#supprimerFournisseur" text="Supprimer" />
+            </HBox>
+            <Label fx:id="statusLabel" style="-fx-text-fill: red;" text="Statut :" />
+        </VBox>
+    </bottom>
+
+</BorderPane>
